@@ -25,7 +25,7 @@ C#, Unity
 - Particle Effects
 
 ## Demo
-https://play.unity.com/p/spaceshooter-11/edit
+https://play.unity.com/p/spaceshooter-11
   
 ## Installation
 Clone this repo to your computer. Download Unity and start the project by opening it with Unity.
