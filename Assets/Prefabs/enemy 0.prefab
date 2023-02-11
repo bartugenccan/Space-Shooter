@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: -2764893701069707756}
   - component: {fileID: 6875745606248989233}
   - component: {fileID: -6554159588541761816}
-  m_Layer: 0
+  - component: {fileID: -4598268466257542793}
+  m_Layer: 7
   m_Name: enemy 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 5036358486177891277}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.017473899, y: -0.08478696, z: 0.005462907}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1382808510404298532}
@@ -95,18 +96,25 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.07403257, y: 0.41405863}
-      - {x: -0.10795521, y: 0.42212155}
-      - {x: -0.31826502, y: 0.5248351}
-      - {x: -0.493834, y: 0.2201126}
-      - {x: -0.25756896, y: -0.33274353}
-      - {x: -0.11505552, y: -0.2879943}
-      - {x: -0.16251661, y: -0.07578367}
-      - {x: 0.14163654, y: -0.08244003}
-      - {x: 0.07244499, y: -0.27899367}
-      - {x: 0.23216802, y: -0.34544396}
-      - {x: 0.44472212, y: 0.21873742}
-      - {x: 0.27446455, y: 0.51448315}
+    - - {x: 0.09309565, y: 0.45672366}
+      - {x: 0.16898508, y: 0.19761123}
+      - {x: 0.13978598, y: 0.16795532}
+      - {x: 0.119019724, y: 0.23815632}
+      - {x: -0.13948041, y: 0.23639348}
+      - {x: -0.16238965, y: 0.17396733}
+      - {x: -0.20113967, y: 0.20769507}
+      - {x: -0.12701829, y: 0.45707056}
+      - {x: -0.26107576, y: 0.52165794}
+      - {x: -0.46841654, y: -0.078542426}
+      - {x: -0.30204952, y: -0.34227508}
+      - {x: -0.108701155, y: -0.24351378}
+      - {x: -0.110731944, y: -0.15330292}
+      - {x: -0.16887097, y: -0.06625211}
+      - {x: 0.081270084, y: -0.14598368}
+      - {x: 0.08197654, y: -0.24722187}
+      - {x: 0.29253453, y: -0.3359124}
+      - {x: 0.45425367, y: -0.06403172}
+      - {x: 0.23633832, y: 0.511306}
 --- !u!114 &6875745606248989233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,7 +127,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9785549cb7f6f4a5a9d1605fd394d0ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  isPlayer: 0
+  health: 40
+  score: 50
+  hitEffect: {fileID: 6273774931856986017, guid: f7bafc3e010aa5342a32b399f0f04aed, type: 3}
+  applyCameraShake: 0
 --- !u!114 &-6554159588541761816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +145,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 25
+--- !u!114 &-4598268466257542793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5036358486177891277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46543b1eac437384cae701b792014716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 7216616342073562522, guid: 71444225a9fad45e9963efe4f228a862, type: 3}
+  projectileSpeed: 7
+  projectileLifetime: 5
+  baseFiringRate: 1
+  useAI: 1
+  firingRateVariance: 1.5
+  minimumFiringRate: 0.1
+  isFiring: 0
 --- !u!1 &5208931206388765626
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,7 +175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1382808510404298532}
   - component: {fileID: 107131943957052025}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: enemyRed1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,14 +189,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5208931206388765626}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: -0.017473899, y: 0.08478696, z: -0.005462907}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7543080026303336784}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!212 &107131943957052025
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -205,7 +237,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c5ec38c029ff3ee4ba8c99b37d6b8cb7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

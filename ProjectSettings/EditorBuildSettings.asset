@@ -6,7 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Menu.unity
+    guid: feb8ffdbdb5984942887ac4db4e87887
+  - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: 78324542ef6154e1ca310054bd3ef8fc
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 3e865730d0f976e44808cf4551915d43
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 82563674b3a353145b0aa2b13d939a6a, type: 2}
+    com.unity.input.settings: {fileID: 11400000, guid: 81abc3f100ff7ff43aec8c5e9a9f3a1a, type: 2}
